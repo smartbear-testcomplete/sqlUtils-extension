@@ -33,7 +33,6 @@ The following method is provided to convert a date value into something meanful 
 The following example demonstrates using this extension in a project:
 
 ```
-#!javascript
 //The following function can be included in any project but it only ever needs to be run the first time to set up the desired settings
 function SQLOptions(){
     SQLUtilities.SetSQLType('MSSQL'); //Can be either MSSQL or MYSQL_351
