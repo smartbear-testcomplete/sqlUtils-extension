@@ -1,0 +1,24 @@
+<ScriptExtensionGroup Name="TristaanOgre Community Extensions">
+    <Category Name="TristaanOgre Community Extensions">
+        <ScriptExtension Name="SQL Utilities" Author="Robert Martin" Version="3.0" HomePage="bitbucket.org/account/user/privateteamogre/projects/CSE">
+            <Script Name="SQLUtilities.js">
+                <Option Name = "SQLType" DefaultValue = "MSSQL"/>
+                <Option Name = "SecurityType" DefaultValue = "INTEGRATED"/>
+                <RuntimeObject Name="SQLUtilities">
+                    <Method Name="NewSQLQuery" Routine="sqlQuery">Creates an SQL object based upon a string and a set of parameter objects</Method>
+                    <Method Name="FormatDateForSQL" Routine="FormatDateForSQL">Takes an integer as an offset date in days, adds it to the current date, and returns a string formatted as YYYY-MM-DD</Method>
+                    <Method Name="SetSQLType" Routine="setSQLType">Sets the SQL Type script option to the indicated string value. Currently supports MSSQL and MYSQL_351</Method>
+                    <Method Name="SetSQLSecurityType" Routine="setSecurityType">Sets the SQL Login type. Enter either INTEGRATED or PROMPT.</Method>
+                    <Method Name="NewQueryObject" Routine="queryObject">Creates a query object for building SQL Query</Method>
+                    <Property Name="DatabaseName" GetRoutine="getDatabaseName" SetRoutine="setDatabaseName">The name of the SQL Database against which SQL queries will be run</Property>
+                    <Property Name="SQLServerName" GetRoutine="getSQLServerName" SetRoutine="setSQLServerName">The name of the SQL server against which SQL queries will be run</Property>
+                    <Property Name="ConnectionString" GetRoutine="getConnectionString">The Connection String used for SQL Query operations</Property>
+                    <Property Name="SQLUserName" GetRoutine="getUserName" SetRoutine="setUserName">The SQL user name for the database connection if needed</Property>
+                    <Property Name="SQLPassWord" GetRoutine="getPassWord" SetRoutine="setPassWord">The SQL Password for the database connection. WARNING! It is unencrypted</Property>
+                    <Description>A runtime object providing a wrapper for several SQL Query related functions used in automation tests.  If they don't exist, will create a DatabaseName and SQLServerName project variables</Description>
+                </RuntimeObject>
+            </Script>
+            <Description>A Set of Runtime objects used for SQL Operations</Description>
+        </ScriptExtension>
+    </Category>
+</ScriptExtensionGroup>
