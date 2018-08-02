@@ -1,4 +1,4 @@
-﻿//This code and the associated script extension are provided under a Creative Commons Attribution-ShareAlike 4.0 International License.
+//This code and the associated script extension are provided under a Creative Commons Attribution-ShareAlike 4.0 International License.
 //You may use and modify this code according to the license, giving appropriate attribution and, if you distribute it, you must do so
 //under the same license.
 
