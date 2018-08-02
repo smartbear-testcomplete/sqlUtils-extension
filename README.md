@@ -16,8 +16,8 @@ This extensions is intended to make it easier and portable to do SQL queries and
 
 The first two methods below are used to set options to persist. They can be called once and only once and never again if so desired just for initial set up.
 
-* SetSQLType - no value returned - This sets the SQL connection type for the TestComplete environment. When this method is called and a value is passed, if the value is valid, that SQL connection type is persisted across TestComplete sessions on the same workstation. This allows the automation engineer to set up their environment for a particular SQL type and not have to reconfigure it each time.  Valid options are: MSSQL and MYSQL_351._
-* SetSQLSecurityType - no value returned - This applies only to MSSQL connection type. When this method is called and a value is passed, if the value is valid, that SQL security type is persisted across TestComplete sessions on the same workstation. This allows the automation engineer to set up their environment for a particular SQL security configuration and not have to reconfigure it each time. This configures either integrated security or security that embeds a username and password. Valud values are: INTEGRATED and PROMPT
+* SetSQLType - no value returned - This sets the SQL connection type for the TestComplete environment. When this method is called and a value is passed, if the value is valid, that SQL connection type is persisted across TestComplete sessions on the same workstation. This allows the automation engineer to set up their environment for a particular SQL type and not have to reconfigure it each time.  Valid options are: ORACLE, MSSQL and MYSQL_351._ ORACLE support is only via MSDASQL.1 Provider
+* SetSQLSecurityType - no value returned - This applies only to MSSQL connection type. When this method is called and a value is passed, if the value is valid, that SQL security type is persisted across TestComplete sessions on the same workstation. This allows the automation engineer to set up their environment for a particular SQL security configuration and not have to reconfigure it each time. This configures either integrated security or security that embeds a username and password. Valid values are: INTEGRATED and PROMPT
 
 Two additional methods are provided for instantiating objects to be used for executing SQL queries.
 
@@ -35,7 +35,7 @@ The following example demonstrates using this extension in a project:
 ```
 //The following function can be included in any project but it only ever needs to be run the first time to set up the desired settings
 function SQLOptions(){
-    SQLUtilities.SetSQLType('MSSQL'); //Can be either MSSQL or MYSQL_351
+    SQLUtilities.SetSQLType('MSSQL'); //Can be either ORACLE, MSSQL or MYSQL_351
 	SQLUtilities.SetSQLSecurityType('INTEGRATED'); //Can be either INTEGRATED or PROMPT
 }
 
