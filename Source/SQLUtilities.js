@@ -76,6 +76,9 @@ function buildConnectionString() {
         case 'MYSQL_351':
             localString = 'Driver={MySQL ODBC 3.51 Driver};Server=' + SQLServerName + ';Database=' + databaseName + ';User=' + userName + ';Password=' + passWord + ';Option=3';
             break;
+        case 'ORACLE':
+            localString = 'Provider=MSDASQL.1;Persist Security Info=False;User ID=' + userName + ';Data Source=' + databaseName';
+            break;
         default :
             Log.Warning('Unknown SQL type encountered. Defaulting to MSSQL with Integrated Security');
             Options.SQLType = 'MSSQL';
@@ -151,78 +154,6 @@ function sqlQuery(sqlString, parameters, stringIsFile) {
         Log.Error('Could not execute sqlQuery: ' + exception.message, exception.stack);
     }
 }
-
-//function ExecSQLQueryFile(FileName)
-//{
-//    try
-//    {
-//        var RowCount;    
-//        connectionObject.ConnectionString = getConnectionString();
-//        var SQLQuery = aqFile.ReadWholeTextFile(aqConvert.VarToStr(FileName), aqFile.ctANSI);
-//        connectionObject.Open();
-//        connectionObject.Execute(SQLQuery, RowCount);
-//        connectionObject.Close();
-//        return RowCount;
-//    }
-//    catch (e)
-//    {
-//        Log.Error("Error executing Query file " + aqConvert.VarToStr(FileName) + ": " + e.description);
-//        return -1;
-//    }
-//}
-//
-//function ExecSQLQueryFromString(QueryString)
-//{
-//    try
-//    {
-//        var RowCount;    
-//        connectionObject.ConnectionString = getConnectionString();
-//        connectionObject.Open();        
-//        connectionObject.Execute(aqConvert.VarToStr(QueryString), RowCount);
-//        connectionObject.Close();
-//        return RowCount;        
-//    }    
-//    catch (e)
-//    {
-//        Log.Error("Error executing QueryString.  See Additional Information for QueryString value: " + e.description, aqConvert.VarToStr(QueryString));
-//        return -1;
-//    }
-//}
-//
-//function ReturnQueryRecordSetFromString(QueryString)
-//{
-//    try
-//    {
-//        connectionObject.ConnectionString = getConnectionString();
-//        connectionObject.Open();        
-//        var RecordSet = connectionObject.Execute(aqConvert.VarToStr(QueryString));
-//        return RecordSet;
-//    }
-//    catch (e)
-//    {
-//        Log.Error("Error running QueryString.  See Additional Information for QueryString value: " + e.description, aqConvert.VarToStr(QueryString))
-//        return aqObject.EmptyVariant;
-//    }    
-//}    
-//
-//function ExecuteStoredProcedure(ProcedureName)
-//{
-//    try
-//    {
-//        var RowCount;
-//        connectionObject.ConnectionString = getConnectionString();
-//        connectionObject.Open();        
-//        connectionObject.Execute("EXEC " + aqConvert.VarToStr(ProcedureName), RowCount);
-//        connectionObject.Close();
-//        return RowCount;
-//    }
-//    catch (e)
-//    {
-//        Log.Error("Error running Stored procedure " + aqConvert.VarToStr(ProcedureName) + ": " + e.description);
-//        return -1;
-//    }
-//}
-
 
 function FormatDateForSQL(OffsetDays)
 {
