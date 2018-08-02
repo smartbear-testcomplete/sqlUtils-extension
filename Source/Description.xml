@@ -1,6 +1,6 @@
 <ScriptExtensionGroup Name="TristaanOgre Community Extensions">
     <Category Name="TristaanOgre Community Extensions">
-        <ScriptExtension Name="SQL Utilities" Author="Robert Martin" Version="3.0" HomePage="bitbucket.org/account/user/privateteamogre/projects/CSE">
+        <ScriptExtension Name="SQL Utilities" Author="Robert Martin" Version="4.1" HomePage="bitbucket.org/account/user/privateteamogre/projects/CSE">
             <Script Name="SQLUtilities.js">
                 <Option Name = "SQLType" DefaultValue = "MSSQL"/>
                 <Option Name = "SecurityType" DefaultValue = "INTEGRATED"/>
