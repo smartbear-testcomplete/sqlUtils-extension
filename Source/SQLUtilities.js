@@ -77,7 +77,7 @@ function buildConnectionString() {
             localString = 'Driver={MySQL ODBC 3.51 Driver};Server=' + SQLServerName + ';Database=' + databaseName + ';User=' + userName + ';Password=' + passWord + ';Option=3';
             break;
         case 'ORACLE':
-            localString = 'Provider=MSDASQL.1;Persist Security Info=False;User ID=' + userName + ';Password=' + passWord + ';Data Source=' + databaseName';
+            localString = 'Provider=MSDASQL.1;Persist Security Info=False;User ID=' + userName + ';Password=' + passWord + ';Data Source=' + databaseName;
             break;
         default :
             Log.Warning('Unknown SQL type encountered. Defaulting to MSSQL with Integrated Security');
